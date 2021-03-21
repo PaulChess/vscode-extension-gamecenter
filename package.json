@@ -2,10 +2,13 @@
 	"name": "gamecenter",
 	"displayName": "gamecenter",
 	"description": "vscode game",
+  "publisher": "shenjiaqi",
 	"version": "0.0.1",
+  "repository":"https://github.com/paulChess/vscode-extension-gamecenter",
 	"engines": {
-		"vscode": "^1.54.0"
+		"vscode": "^1.47.0"
 	},
+  "icon": "logo.png",
 	"categories": [
 		"Other"
 	],
@@ -19,7 +22,28 @@
 				"command": "gamecenter.helloWorld",
 				"title": "Hello World"
 			}
-		]
+		],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gamecenter",
+          "title": "小霸王",
+          "icon": "resources/gamecenter.svg"
+        }
+      ]
+    },
+    "views": {
+      "gamecenter": [
+        {
+          "id": "romLocal",
+          "name": "localGame"
+        },
+        {
+          "id": "romRemote",
+          "name": "remoteGame"
+        }
+      ]
+    }
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -27,7 +51,7 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.54.0",
+		"@types/vscode": "^1.47.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.4",
 		"@types/node": "^12.11.7",
